@@ -61,8 +61,7 @@ navPage: kontakty  # kontakty.njk
 
 ## Homepage two-column layout
 
-On mobile: bio + photo appears first (first in DOM), concerts + newsletter second.
-On desktop (lg): grid with explicit column placement — `lg:col-start-2` on bio (right), `lg:col-start-1 lg:row-start-1` on concerts (left). Do NOT use `lg:order-*` — Tailwind's `order` is unreliable without a flex/grid parent active at that breakpoint.
+DOM order matches visual order on both mobile and desktop: concerts + newsletter first (left), bio + photo second (right). No CSS order tricks — the `lg:grid lg:grid-cols-2` parent auto-places children left→right.
 
 ## Adding content
 
