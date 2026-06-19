@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://janmarek.github.io/zemepasy-web/sitemap.xml

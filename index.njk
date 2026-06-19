@@ -110,6 +110,7 @@ permalink: index.html
             name="EMAIL"
             placeholder="váš@email.cz"
             required
+            aria-label="Váš e-mail"
             class="flex-1 border border-ink bg-transparent px-3 py-2 font-mono text-sm focus:outline-none focus:ring-1 focus:ring-ink placeholder:opacity-30"
           >
           <button
@@ -127,20 +128,20 @@ permalink: index.html
         <div class="border border-ink p-4">
         <ul class="font-mono text-sm space-y-3">
           <li>
-            <a href="https://www.facebook.com/zemepasy/?locale=cs_CZ" target="_blank" rel="noopener" class="inline-flex items-center gap-2">
-              <i class="fa-brands fa-facebook fa-fw"></i>
+            <a href="https://www.facebook.com/zemepasy/?locale=cs_CZ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2">
+              <i class="fa-brands fa-facebook fa-fw" aria-hidden="true"></i>
               Facebook
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/zemepasy" target="_blank" rel="noopener" class="inline-flex items-center gap-2">
-              <i class="fa-brands fa-instagram fa-fw"></i>
+            <a href="https://www.instagram.com/zemepasy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2">
+              <i class="fa-brands fa-instagram fa-fw" aria-hidden="true"></i>
               Instagram
             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/@zemepasy" target="_blank" rel="noopener" class="inline-flex items-center gap-2">
-              <i class="fa-brands fa-youtube fa-fw"></i>
+            <a href="https://www.youtube.com/@zemepasy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2">
+              <i class="fa-brands fa-youtube fa-fw" aria-hidden="true"></i>
               YouTube
             </a>
           </li>
@@ -152,4 +153,21 @@ permalink: index.html
 
   </div>
 </main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Zeměpásy",
+  "description": "Progresivní folk rock z Kladna. Texty českých básníků první poloviny 20. století, vlastní hudba.",
+  "url": "https://janmarek.github.io/zemepasy-web/",
+  "genre": "Progressive folk rock",
+  "foundingLocation": { "@type": "Place", "name": "Kladno, Česká republika" },
+  "sameAs": [
+    "https://www.facebook.com/zemepasy/",
+    "https://www.instagram.com/zemepasy",
+    "https://www.youtube.com/@zemepasy"
+  ]
+}
+</script>
 {% endblock %}
