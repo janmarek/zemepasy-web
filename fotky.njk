@@ -1,0 +1,94 @@
+---
+pageTitle: Fotky | Zeměpásy
+description: Fotogalerie kapely Zeměpásy.
+navPage: fotky
+permalink: fotky.html
+---
+{% extends "base.njk" %}
+
+{% block content %}
+<main class="py-8">
+  <h2 class="font-display font-black text-3xl sm:text-4xl italic leading-tight mb-5">Fotografie</h2>
+  <!--
+    Přidat fotografii — zkopírujte blok <figure> níže a doplňte soubor do img/:
+
+    <figure class="sm:border sm:border-ink sm:p-4">
+      <img
+        src="img/moje-foto.jpg"
+        alt="Popis fotografie"
+        class="w-full object-cover aspect-[3/2]"
+        loading="lazy"
+      >
+      <figcaption class="font-mono text-[0.65rem] tracking-wide text-muted px-1 pt-2">
+        Popis / místo / rok
+      </figcaption>
+    </figure>
+  -->
+
+  <!-- Featured photo — full width -->
+  <figure class="sm:border sm:border-ink sm:p-4 mb-4">
+    <img
+      src="img/foto-5.jpg"
+      alt="Zeměpásy — 30. 4. 2026 Mezouň"
+      class="w-full object-cover object-center"
+      loading="lazy"
+    >
+    <figcaption class="font-mono text-[0.65rem] tracking-wide text-muted px-1 pt-2">
+      30. 4. 2026 · Mezouň
+    </figcaption>
+  </figure>
+
+  <!-- Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+    <figure class="sm:border sm:border-ink sm:p-4">
+      <img
+        src="img/foto-1.jpg"
+        alt="Zeměpásy — Koncert v Kafe nůžky papír"
+        class="w-full object-cover aspect-[3/2]"
+        loading="lazy"
+      >
+      <figcaption class="font-mono text-[0.65rem] tracking-wide text-muted px-1 pt-2">
+        15. 11. 2022 · Kafe nůžky papír
+      </figcaption>
+    </figure>
+
+    <figure class="sm:border sm:border-ink sm:p-4">
+      <img
+        src="img/foto-2.jpg"
+        alt="Zeměpásy — Soustředění"
+        class="w-full object-cover aspect-[3/2]"
+        loading="lazy"
+      >
+      <figcaption class="font-mono text-[0.65rem] tracking-wide text-muted px-1 pt-2">
+        Soustředění
+      </figcaption>
+    </figure>
+
+    <figure class="sm:border sm:border-ink sm:p-4">
+      <img
+        src="img/foto-3.jpg"
+        alt="Zeměpásy — Unplugged v Kaštanu"
+        class="w-full object-cover aspect-[3/2]"
+        loading="lazy"
+      >
+      <figcaption class="font-mono text-[0.65rem] tracking-wide text-muted px-1 pt-2">
+        Unplugged v Kaštanu
+      </figcaption>
+    </figure>
+
+    <figure class="sm:border sm:border-ink sm:p-4">
+      <img
+        src="img/foto-4.jpg"
+        alt="Zeměpásy — promo foto"
+        class="w-full object-cover aspect-[3/2]"
+        loading="lazy"
+      >
+      <figcaption class="font-mono text-[0.65rem] tracking-wide text-muted px-1 pt-2">
+        Promo foto
+      </figcaption>
+    </figure>
+
+  </div>
+</main>
+{% endblock %}

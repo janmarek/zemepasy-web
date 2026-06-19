@@ -1,0 +1,52 @@
+---
+pageTitle: Kontakty | Zeměpásy
+description: Kontaktní informace kapely Zeměpásy.
+navPage: kontakty
+permalink: kontakty.html
+---
+{% extends "base.njk" %}
+
+{% block content %}
+<main class="py-8">
+  <h2 class="font-display font-black text-3xl sm:text-4xl italic leading-tight mb-8">Kontakty</h2>
+
+  <div class="grid sm:grid-cols-2 gap-8 sm:gap-12">
+
+    <!-- Personal contact -->
+    <div>
+      <p class="font-mono text-xs tracking-widest uppercase text-muted mb-3">Obecné dotazy</p>
+      <p class="font-semibold mb-1">Jan Marek</p>
+      <ul class="font-mono text-sm space-y-2">
+        <li><a href="mailto:honzamarekhonza@gmail.com">honzamarekhonza@gmail.com</a></li>
+        <li><a href="tel:+420737622923">737 622 923</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <p class="font-mono text-xs tracking-widest uppercase text-muted mb-3">Sociální sítě</p>
+      <ul class="font-mono text-sm space-y-3">
+        <li>
+          <a href="https://www.facebook.com/zemepasy/?locale=cs_CZ" target="_blank" rel="noopener" class="inline-flex items-center gap-2">
+            <i class="fa-brands fa-facebook fa-fw"></i>
+            Facebook — facebook.com/zemepasy
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/zemepasy" target="_blank" rel="noopener" class="inline-flex items-center gap-2">
+            <i class="fa-brands fa-instagram fa-fw"></i>
+            Instagram — @zemepasy
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@zemepasy" target="_blank" rel="noopener" class="inline-flex items-center gap-2">
+            <i class="fa-brands fa-youtube fa-fw"></i>
+            YouTube — @zemepasy
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+{% endblock %}

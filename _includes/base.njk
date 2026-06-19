@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ description }}">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#faf8f3',
+            ink: '#1a1a1a',
+            muted: '#5c5040',
+            accent: '#8c3a2e',
+          },
+          fontFamily: {
+            serif: ['"PT Serif"', 'Georgia', 'serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['"Courier Prime"', '"Courier New"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous">
+
+  <style>
+    body { background-color: #faf8f3; color: #1a1a1a; }
+    a:hover { color: #8c3a2e; }
+    {% block styles %}{% endblock %}
+  </style>
+</head>
+
+<body class="font-serif">
+<div class="max-w-4xl mx-auto px-5 sm:px-10">
+
+  <!-- ═══ MASTHEAD ═══ -->
+  <header class="pt-5">
+
+    <div class="border-t-4 border-ink pt-4 pb-3 text-center">
+      <a href="index.html" class="hover:opacity-80 hover:text-ink transition-opacity">
+        <h1 class="font-display font-black text-5xl sm:text-7xl tracking-[0.18em] uppercase leading-none">ZEMĚPÁSY</h1>
+      </a>
+      <p class="font-mono text-[0.65rem] sm:text-xs tracking-[0.22em] text-muted mt-2 uppercase">Pseudointelektuální progresivně alternativní pop-folk</p>
+    </div>
+
+    <div style="border-top: 3px double #1a1a1a;"></div>
+
+    <nav class="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-1 py-2 font-mono text-[0.72rem] sm:text-xs tracking-[0.1em] uppercase">
+      <a href="index.html" class="{% if navPage == 'home' %}font-bold underline{% endif %}">O&nbsp;nás</a>
+      <span>·</span>
+      <a href="pisne.html" class="{% if navPage == 'pisne' %}font-bold underline{% endif %}">Písně</a>
+      <span>·</span>
+      <a href="fotky.html" class="{% if navPage == 'fotky' %}font-bold underline{% endif %}">Fotky</a>
+      <span>·</span>
+      <a href="kontakty.html" class="{% if navPage == 'kontakty' %}font-bold underline{% endif %}">Kontakty</a>
+    </nav>
+
+    <div style="border-top: 1px solid #1a1a1a;"></div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <!-- ═══ FOOTER ═══ -->
+  <div style="border-top: 3px double #1a1a1a; margin-top: 2rem;"></div>
+  <footer class="py-5 text-center font-mono text-[0.62rem]">
+    <p>
+      © 2026 Zeměpásy
+      <span class="mx-2">·</span>
+      <a href="https://www.facebook.com/zemepasy/?locale=cs_CZ" target="_blank" rel="noopener">Facebook</a>
+      <span class="mx-2">·</span>
+      <a href="https://www.instagram.com/zemepasy" target="_blank" rel="noopener">Instagram</a>
+      <span class="mx-2">·</span>
+      <a href="https://www.youtube.com/@zemepasy" target="_blank" rel="noopener">YouTube</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
