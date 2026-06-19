@@ -1,6 +1,6 @@
 # Zeměpásy — web
 
-Static band website built with [Eleventy](https://www.11ty.dev/). No server required.
+Static band website built with [Eleventy](https://www.11ty.dev/). Lives at `janmarek/zemepasy-web` on GitHub, deployed to https://janmarek.github.io/zemepasy-web/ via GitHub Actions.
 
 ## Stack
 
@@ -23,15 +23,18 @@ Global `a:hover { color: #8c3a2e }` is set in `base.njk`. The band name link ove
 ## Files
 
 ```
-web/
 ├── _includes/
-│   └── base.njk      — shared layout: head, masthead, nav, footer
-├── index.njk         — homepage: two-column (gigs+newsletter+social left, bio+photo right)
+│   └── base.njk      — shared layout: head, masthead, nav, footer; OG/Twitter/canonical meta tags here
+├── index.njk         — homepage: two-column (bio+photo first on mobile; concerts+newsletter+social left on desktop)
 ├── pisne.njk         — songs: lyrics + chords accordion, YouTube embeds
 ├── fotky.njk         — photo gallery
 ├── kontakty.njk      — contact page: Jan Marek, email, phone, socials
 ├── img/
+│   ├── cover.jpg     — used as OG/Twitter share image
 │   └── foto-*.jpg    — band photos (numbered 1–5 currently)
+├── favicon.svg       — Z on paper background (#faf8f3), ink top bar
+├── robots.txt        — allows all, points to sitemap
+├── sitemap.xml       — all 4 pages
 └── _site/            — build output (gitignored)
 ```
 
@@ -55,6 +58,11 @@ navPage: pisne     # pisne.njk
 navPage: fotky     # fotky.njk
 navPage: kontakty  # kontakty.njk
 ```
+
+## Homepage two-column layout
+
+On mobile: bio + photo appears first (first in DOM), concerts + newsletter second.
+On desktop (lg): grid with explicit column placement — `lg:col-start-2` on bio (right), `lg:col-start-1 lg:row-start-1` on concerts (left). Do NOT use `lg:order-*` — Tailwind's `order` is unreliable without a flex/grid parent active at that breakpoint.
 
 ## Adding content
 
@@ -92,12 +100,13 @@ Form `action="#"` is a placeholder. To activate with Mailchimp (free up to 500 c
 3. Copy the `action` URL into the form in `index.njk`
 4. Remove `onsubmit="return false;"` from the form tag
 
+## SEO & meta
+
+- `base.njk` contains canonical URL, OG tags, Twitter Card, theme-color — all driven by `pageTitle` and `description` frontmatter
+- `index.njk` has a JSON-LD `MusicGroup` schema block at the bottom of the content
+- `img/cover.jpg` is the OG share image — replace with a better band photo if available
+- If the site moves to a custom domain, update the hardcoded `https://janmarek.github.io/zemepasy-web/` URLs in: `base.njk` (canonical + OG), `index.njk` (JSON-LD), `robots.txt`, `sitemap.xml`
+
 ## GitHub Pages
 
-Push `_site/` contents to a `gh-pages` branch, or use a GitHub Action:
-```yaml
-- run: npm ci && npm run build
-- uses: peaceiris/actions-gh-pages@v4
-  with:
-    publish_dir: ./web/_site
-```
+Deployed automatically on push to `main` via `.github/workflows/deploy.yml`. Uses Node 26. GitHub Pages source is set to "GitHub Actions" in repo settings.
